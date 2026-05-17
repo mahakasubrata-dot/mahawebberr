@@ -173,14 +173,29 @@
             }
         });
 
-        // Fitur utama: Mencegah login dan menampilkan "Belum login!"
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            // 1. Mencegah browser me-reload halaman
-            event.preventDefault(); 
-            
-            // 2. Menampilkan tulisan "Belum login!" di bawah tombol
-            const statusMsg = document.getElementById('statusMessage');
-            statusMsg.style.display = 'block';
+        
+// Fitur utama: Mengarahkan user ke dashboard saat form di-submit
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+    // 1. Mencegah browser me-reload halaman secara default
+        event.preventDefault(); 
+    
+    // Tampilkan pesan sukses / efek visual mandala (jika ada)
+        const successMsg = document.getElementById('successMessage');
+        if (successMsg) {
+            successMsg.style.display = 'block';
+        }
+
+    // Sembunyikan pesan error "Belum login" jika sebelumnya sempat muncul
+        const statusMsg = document.getElementById('statusMessage');
+        if (statusMsg) {
+            statusMsg.style.style.display = 'none';
+        }
+
+    // 2. Alihkan user ke URL dashboard yang benar setelah jeda 1 detik
+        setTimeout(function() {
+            window.location.href = "https://mahakasubrata-dot.github.io/mahawebberr/dashboard.html";
+        }, 1000); 
+    });
 
            
         });
