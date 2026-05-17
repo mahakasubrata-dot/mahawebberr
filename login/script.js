@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 10);
                 }
 
-                // Berpindah ke halaman dashboard setelah 1.5 detik
+                // PERBAIKAN DI SINI: Menggunakan URL Absolut agar tidak terjebak di folder /login/
                 setTimeout(() => {
-                    window.location.href = "dashboard.html"; 
+                    window.location.href = "https://mahakasubrata-dot.github.io/mahawebberr/dashboard.html"; 
                 }, 1500);
 
             } else {
