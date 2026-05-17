@@ -10,14 +10,16 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
 <style type="text/css">
 /* ==========================================================================
-   KODE PENYELEARASAN WARNA, TIPOGRAFI, DAN REPARASI FOOTER
+   KODE REPARASI UTAMA (MENGHENTIKAN KONFLIK CSS BAWAAN TEMPLAT)
    ========================================================================== */
+
+/* 1. Pengaturan Font & Perbaikan Warna Dasar */
 body, p, ul, li, div {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     font-size: 13px;
     line-height: 1.6;
 }
@@ -26,64 +28,107 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
     font-family: 'Lora', Georgia, serif !important;
 }
 
-/* Keterbacaan teks deskripsi di dalam slider utama */
-#featured .info p {
-    color: #e2e8f0 !important;
-    font-size: 13px !important;
-}
-
-#featured .info h2 a {
-    color: #ffffff !important;
-    font-weight: 600 !important;
-}
-
-/* Skema warna konten utama (kontras tinggi) */
 #templatemo_content p {
-    color: #334155 !important; /* Abu-abu gelap slate */
+    color: #2c3e50 !important; /* Warna teks isi lebih tegas */
+    margin-bottom: 15px !important;
 }
 
 #templatemo_content h2 {
-    color: #1e3a8a !important; /* Biru dongker maritim */
-    font-weight: 700;
+    color: #1e3a8a !important; /* Biru maritim */
+    font-weight: 700 !important;
 }
 
 #templatemo_content h2 span {
-    color: #0284c7 !important; /* Aksentuasi cyan laut */
+    color: #0284c7 !important; /* Biru langit cerah */
 }
 
-/* Memperbaiki keterbacaan teks tautan di footer agar tidak samar */
-#templatemo_footer .tmo_list li a {
-    color: #cbd5e1 !important;
+/* 2. Solusi Kotak Abu-Abu Besar & Pembersihan List Layanan Kami */
+#templatemo_content .tmo_list {
+    margin: 15px 0 !important;
+    padding: 0 0 0 20px !important;
+    list-style-type: square !important; /* Mengembalikan tanda poin peluru standar */
+    text-align: left !important;
 }
-#templatemo_footer .tmo_list li a:hover {
-    color: #38bdf8 !important;
+
+#templatemo_content .tmo_list li {
+    background: none !important; /* Menghapus gambar latar besar templat_list.jpg penyebab kotak abu-abu */
+    padding: 3px 0 !important;
+    margin: 0 !important;
+    color: #2c3e50 !important;
+    text-align: left !important;
+}
+
+/* 3. Menjaga Kestabilan Layout Blok Kolom Tengah dan Kanan */
+.col_w300 {
+    float: left !important;
+    width: 300px !important;
+    margin-right: 30px !important;
+    min-height: 480px !important; /* Mencegah tombol terbawah saling bertumpuk atau hilang */
+}
+
+.col_last {
+    margin-right: 0 !important;
+}
+
+.btn_more {
+    clear: both !important;
+    margin-top: 15px !important;
+}
+
+/* 4. Solusi Layout Area Media Sosial & Footer */
+#templatemo_footer h5 {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    margin-bottom: 12px !important;
 }
 
 #templatemo_footer p {
-    color: #94a3b8 !important;
+    color: #cbd5e1 !important;
 }
 
-/* PERBAIKAN BUG UTAMA: Mencegah gambar latar belakang footer merusak tata letak */
 #social_box {
     margin: 15px 0 0 0 !important;
     padding: 0 !important;
     list-style: none !important;
-    display: flex !important;
-    gap: 10px !important;
+    clear: both !important;
+    display: block !important;
 }
 
 #social_box li {
-    background: none !important;
+    background: none !important; /* Menghapus glitch background list di footer */
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 0 8px 0 0 !important;
     display: inline-block !important;
+    float: left !important;
 }
 
 #social_box li img {
-    width: 32px !important;
-    height: 32px !important;
+    width: 28px !important;
+    height: 28px !important;
     border: none !important;
-    float: none !important;
+}
+
+/* Memperbaiki Keterbacaan Navigasi Peta Situs dan Tautan di Area Biru Bawah */
+#templatemo_footer .tmo_list {
+    margin: 10px 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+#templatemo_footer .tmo_list li {
+    background: none !important;
+    padding: 4px 0 !important;
+    border-bottom: 1px dotted rgba(255,255,255,0.1) !important;
+}
+
+#templatemo_footer .tmo_list li a {
+    color: #e2e8f0 !important;
+    text-decoration: none !important;
+}
+
+#templatemo_footer .tmo_list li a:hover {
+    color: #38bdf8 !important;
+    text-decoration: underline !important;
 }
 </style>
 
@@ -99,15 +144,12 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
 <body>
 
 <div id="templatemo_wrapper_outer">
-
 <div id="templatemo_wrapper">
 	
     <div id="templatemo_header">
-
     	<div id="site_title">
             <h1><a href="#"><img src="images/templatemo_logo.jpg" alt="logo" /><span>Maha Bahari Nusantara</span></a></h1>
         </div> 
-        
         <div id="templatemo_menu">
             <ul>
                 <li><a href="index.html" class="current">Beranda</a></li>
@@ -120,7 +162,6 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
     </div> 
     
     <div id="templatemo_slider">
-    
 		<div id="featured" >
 			<ul class="ui-tabs-nav">
                 <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-1"><a href="#fragment-1"><img src="images/image2-small.jpg" alt="Navigasi" /><span>Sistem Navigasi Canggih &amp; Pemetaan Jalur Otomatis</span></a></li>
@@ -160,7 +201,6 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
 					<p>Pelatihan berkala awak kapal bersertifikasi internasional demi standar operasional armada yang prima. Menghadirkan efisiensi konsumsi bahan bakar kapal yang ramah lingkungan....<a href="#" >selengkapnya</a></p>
 				</div>
 			</div>
-    
 		</div>
 	</div> 
     
@@ -168,42 +208,31 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
     	
         <div class="col_w300">
         	<h2>WARTA <span>BAHARI</span></h2>
-            
             <div class="sb_news_box">
                 <img src="images/templatemo_image_04.jpg" alt="Warta 1" />
     			<h6><a href="#">Regulasi Baru Alur Laut Kepulauan</a></h6>
                 Kementerian Perhubungan laut menerapkan pembaruan sistem zonasi guna memperketat pengawasan kapal asing.
                 <div class="cleaner"></div>
             </div>
-			
             <div class="sb_news_box">
                 <img src="images/templatemo_image_05.jpg" alt="Warta 2" />
                 <h6><a href="#">Ekspansi Terminal Kargo Domestik</a></h6>
                 Pembangunan infrastruktur dermaga baru rampung, kapasitas penampungan logistik meningkat hingga sekitar 40%.
                 <div class="cleaner"></div>
             </div>
-			
             <div class="sb_news_box">
        	        <img src="images/templatemo_image_06.jpg" alt="Warta 3" />
                 <h6><a href="#">Teknologi Deteksi Dini Karang</a></h6>
                 Pemasangan sonar aktif di area perairan dangkal guna meminimalkan insiden lambung kapal tergores.
                 <div class="cleaner"></div>
             </div>
-			
-            <div class="sb_news_box">
-       	        <img src="images/templatemo_image_07.jpg" alt="Warta 4" />
-                <h6><a href="#">Prediksi Musim Angin Monsun</a></h6>
-                Badan Meteorologi merilis infografis rute alternatif pelayaran komersial selama musim pancaroba berlangsung.
-                <div class="cleaner"></div>
-            </div>
-            
             <div class="btn_more"><a href="news.html">Lihat Berita</a></div>	
         </div>
         
         <div class="col_w300">
             <h2>LAYANAN <span>KAMI</span></h2>
             <div class="image_wrapper"><img width="240" height="110" src="images/templatemo_image_01.jpg" alt="Layanan" /></div>
-            <p><em>Maha Bahari fokus memberikan solusi rute pelayaran niaga paling aman, efisien, dan hemat bahan bakar melalui analisis prediktif big data kelautan.</em></p>
+            <p><em>Maha Bahari fokus memberikan solusi rute pelayaran niaga paling aman, efisien, dan hemat bahan bakar melalui analisis maritim.</em></p>
                         
             <ul class="tmo_list">
                 <li>Konsultasi Rute Tol Laut Komersial</li>
@@ -219,13 +248,13 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
             <h2>TENTANG <span>KAMI</span></h2>
             <div class="image_wrapper"><img width="240" height="110" src="images/templatemo_image_02.jpg" alt="Tentang" /></div>
             <p><em>Berdiri sejak dedikasi panjang dalam dunia maritim, kami berkomitmen menjaga rantai pasok distribusi logistik laut tetap lancar.</em></p>
-            <p>Maha Bahari merupakan penyedia ekosistem solusi maritim digital terpadu. Kami mengintegrasikan teknologi informasi berbasis satelit ke dalam operasional kapal niaga konvensional. Melalui jaringan kemitraan pelabuhan yang luas, kami membantu pelaku industri menjangkau rute terjauh secara aman, tepat waktu, dan efisien.</p>
-          <div class="btn_more"><a href="about.html">Profil Perusahaan</a></div>
-      </div>
+            <p>Kami mengintegrasikan teknologi satelit ke dalam operasional kapal niaga konvensional. Melalui kemitraan yang luas, kami menjangkau rute terjauh secara aman.</p>
+            <div class="cleaner"></div>
+            <div class="btn_more"><a href="about.html">Profil Perusahaan</a></div>
+        </div>
     
     	<div class="cleaner"></div>
     </div>
-    
 	<div class="cleaner"></div>
 </div>
 </div>
@@ -234,7 +263,6 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
 	<div id="footer_top"></div>
 	
 	<div id="templatemo_footer">
-    
         <div class="col_w220">
             <h5>Media Sosial</h5>
             <p>Ikuti pembaruan terkini mengenai kondisi pelayaran maritim, artikel edukasi kelautan, dan layanan logistik kami melalui kanal resmi berikut.</p>
@@ -280,14 +308,12 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
 				<li><a href="#">Registrasi Sertifikat Awak</a></li>
             </ul>    
         </div>
-        
         <div class="cleaner"></div>
     </div> 
 	
     <div id="templatemo_copyright">
         Hak Cipta © 2026 <a href="#">Maha Bahari Nusantara</a> | Dirancang secara Harmonis untuk Keterbacaan Optimal
     </div>
-    
 </div>
 <script src="login/js/welcome.js"></script>
 </body>
