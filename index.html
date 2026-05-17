@@ -14,7 +14,7 @@
 
 <style type="text/css">
 /* ==========================================================================
-   KODE INJEKSI OPTIMASI FONT & WARNA (TIDAK MERUSAK STRUKTUR FRAMEWORK CSS)
+   KODE PENYELEARASAN WARNA, TIPOGRAFI, DAN REPARASI FOOTER
    ========================================================================== */
 body, p, ul, li, div {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
@@ -22,12 +22,11 @@ body, p, ul, li, div {
     line-height: 1.6;
 }
 
-/* Judul Utama menggunakan font serif modern agar terkesan kokoh dan korporat */
 h1, h2, h3, h5, h6, .ui-tabs-nav span {
     font-family: 'Lora', Georgia, serif !important;
 }
 
-/* Memperbaiki keterbacaan teks deskripsi di bagian slider utama */
+/* Keterbacaan teks deskripsi di dalam slider utama */
 #featured .info p {
     color: #e2e8f0 !important;
     font-size: 13px !important;
@@ -38,9 +37,9 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
     font-weight: 600 !important;
 }
 
-/* Menyelaraskan skema warna teks agar memiliki kontras tinggi */
+/* Skema warna konten utama (kontras tinggi) */
 #templatemo_content p {
-    color: #334155 !important; /* Warna abu gelap slate yang nyaman di mata */
+    color: #334155 !important; /* Abu-abu gelap slate */
 }
 
 #templatemo_content h2 {
@@ -52,7 +51,7 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
     color: #0284c7 !important; /* Aksentuasi cyan laut */
 }
 
-/* Perbaikan kontras warna link navigasi bawah agar tidak tenggelam */
+/* Memperbaiki keterbacaan teks tautan di footer agar tidak samar */
 #templatemo_footer .tmo_list li a {
     color: #cbd5e1 !important;
 }
@@ -62,6 +61,29 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
 
 #templatemo_footer p {
     color: #94a3b8 !important;
+}
+
+/* PERBAIKAN BUG UTAMA: Mencegah gambar latar belakang footer merusak tata letak */
+#social_box {
+    margin: 15px 0 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    gap: 10px !important;
+}
+
+#social_box li {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-block !important;
+}
+
+#social_box li img {
+    width: 32px !important;
+    height: 32px !important;
+    border: none !important;
+    float: none !important;
 }
 </style>
 
@@ -219,7 +241,7 @@ h1, h2, h3, h5, h6, .ui-tabs-nav span {
             
             <ul id="social_box">
                 <li><a href="#"><img src="images/facebook.png" alt="Facebook" /></a></li>
-                <li><a href="#"><img src="images/twitter.jpg" alt="Twitter" /></a></li>
+                <li><a href="#"><img src="images/twitter.png" alt="Twitter" /></a></li>
                 <li><a href="#"><img src="images/linkedin.jpg" alt="Linkedin" /></a></li>
                 <li><a href="#"><img src="images/technorati.jpg" alt="Technorati" /></a></li>
                 <li><a href="#"><img src="images/myspace.jpg" alt="Myspace" /></a></li>                
