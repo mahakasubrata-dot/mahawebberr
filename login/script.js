@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // PERBAIKAN DI SINI: Menggunakan URL Absolut agar tidak terjebak di folder /login/
                 setTimeout(() => {
-                    window.location.href = "https://mahakasubrata-dot.github.io/mahawebberr/index.html"; 
+                    window.location.href = "https://mahakasubrata-dot.github.io/mahawebberr.html"; 
                 }, 1500);
 
             } else {
